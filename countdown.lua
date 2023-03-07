@@ -62,7 +62,7 @@ function script_properties()
 	obs.obs_properties_add_int(props, "start_h", "Starting Hour", 0, 23, 1)
 	obs.obs_properties_add_int(props, "start_m", "Starting minute", 0, 59, 1)
 	obs.obs_properties_add_text(props, "finish_text", "Text when timer is over", obs.OBS_TEXT_DEFAULT)
-	obs.obs_properties_add_list(props, "source", "Source for countdown clock", obs.OBS_COMBO_TYPE_EDITABLE, obs.OBS_COMBO_FORMAT_STRING)
+	local p = obs.obs_properties_add_list(props, "source", "Source for countdown clock", obs.OBS_COMBO_TYPE_EDITABLE, obs.OBS_COMBO_FORMAT_STRING)
 	local srcs = obs.obs_enum_sources()
 	if srcs ~= nil then
 		for _, src in ipairs(srcs) do
